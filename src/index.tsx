@@ -10,9 +10,9 @@ import NotFound from "./routes/notfound";
 ReactDOM.render(
     <BrowserRouter>
         <Routes>
-            <Route path={"*"} element={<NotFound/>}/>
             <Route path={"/"} element={<Home/>}/>
             <Route path={"/summaries"} element={<Summaries/>}/>
+            <Route path={"*"} element={<NotFound/>}/>
         </Routes>
     </BrowserRouter>,
     document.getElementById('root')
