@@ -4,9 +4,9 @@ import Navbar from '../components/navbar/navbar';
 import { Disclosure, Tab } from '@headlessui/react';
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
-type YearTabProps = {
-    title: string
-}
+import YearTab from "../components/summaries/yeartab";
+import Summary from "../components/summaries/summary";
+import SummaryDisclosure from "../components/summaries/summaryDisclosure";
 
 export default function Summaries() {
     return (
@@ -34,96 +34,51 @@ export default function Summaries() {
                             <YearTab title={"2019 \u2014 2020"}/>
                         </Tab.List>
                         <Tab.Panel>
-                            <div className={"p-8 bg-slate-100 rounded-xl shadow leading-loose"}>
-                                <Disclosure>
-                                    <Disclosure.Button
-                                        className={"flex shadow px-4 py-2 text-sm font-medium bg-indigo-100 hover:bg-indigo-200 w-full rounded-lg justify-between"}>
-                                        <span>Semester Ia</span>
-                                        <ChevronDownIcon className={"w-5 h-5"}/>
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className={"w-full mt-4 px-4 py-2 bg-white shadow rounded-lg"}>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/2122/information-security_WBCS004.pdf"><samp>WBCS004</samp> &mdash; Information
-                                            Security</a><br/>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/2122/introduction-to-machine-learning_WBCS032.pdf"><samp>WBCS032</samp> &mdash; Introduction
-                                            to Machine Learning</a><br/>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/2122/network-centric-systems_WBCS031.pdf"><samp>WBCS031</samp> &mdash; Network
-                                            Centric Systems</a>
-                                    </Disclosure.Panel>
-                                </Disclosure>
-                                <Disclosure>
-                                    <Disclosure.Button
-                                        className={"flex shadow mt-4 px-4 py-2 text-sm font-medium bg-indigo-100 hover:bg-indigo-200 w-full rounded-lg justify-between"}>
-                                        <span>Semester Ib</span>
-                                        <ChevronDownIcon className={"w-5 h-5"}/>
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className={"w-full mt-4 px-4 py-2 bg-white shadow rounded-lg"}>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/2122/compiler-construction_WBCS039.pdf"><samp>WBCS039</samp> &mdash; Compiler
-                                            Construction</a>
-                                    </Disclosure.Panel>
-                                </Disclosure>
+                            <div className={"p-8 pt-4 bg-slate-100 rounded-xl shadow leading-loose"}>
+                                <SummaryDisclosure title={"Semester Ia"}>
+                                    <Summary href={"assets/summaries/2122/information-security_WBCS004.pdf"}
+                                             code={"WBCS004"} title={"Information Security"}/>
+                                    <Summary
+                                        href={"assets/summaries/2122/introduction-to-machine-learning_WBCS032.pdf"}
+                                        code={"WBCS032"} title={"Introduction to Machine Learning"}/>
+                                    <Summary
+                                        href={"assets/summaries/2122/network-centric-systems_WBCS031.pdf"}
+                                        code={"WBCS031"} title={"Network Centric Systems"}/>
+                                </SummaryDisclosure>
+                                <SummaryDisclosure title={"Semester Ib"}>
+                                    <Summary
+                                        href={"assets/summaries/2122/compiler-construction_WBCS039.pdf"}
+                                        code={"WBCS039"} title={"Compiler Construction"}/>
+                                </SummaryDisclosure>
                             </div>
                         </Tab.Panel>
                         <Tab.Panel>
-                            <div className={"p-8 bg-slate-100 rounded-xl shadow leading-loose"}>
-                                <Disclosure>
-                                    <Disclosure.Button
-                                        className={"flex shadow px-4 py-2 text-sm font-medium bg-indigo-100 hover:bg-indigo-200 w-full rounded-lg justify-between"}>
-                                        <span>Semester Ib</span>
-                                        <ChevronDownIcon className={"w-5 h-5"}/>
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className={"w-full mt-4 px-4 py-2 bg-white shadow rounded-lg"}>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/2021/signals-and-systems_WBAI016.pdf"><samp>WBAI016</samp> &mdash; Signals
-                                            and Systems</a>
-                                    </Disclosure.Panel>
-                                </Disclosure>
-                                <Disclosure>
-                                    <Disclosure.Button
-                                        className={"flex shadow mt-4 px-4 py-2 text-sm font-medium bg-indigo-100 hover:bg-indigo-200 w-full rounded-lg justify-between"}>
-                                        <span>Semester IIb</span>
-                                        <ChevronDownIcon className={"w-5 h-5"}/>
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className={"w-full mt-4 px-4 py-2 bg-white shadow rounded-lg"}>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/2021/advanced-algorithms-and-datastructures_WBCS009.pdf"><samp>WBCS009</samp> &mdash; Advanced
-                                            Algorithms and Datastructures</a>
-                                    </Disclosure.Panel>
-                                </Disclosure>
+                            <div className={"p-8 pt-4 bg-slate-100 rounded-xl shadow leading-loose"}>
+                                <SummaryDisclosure title={"Semester Ib"}>
+                                    <Summary href={"assets/summaries/2021/signals-and-systems_WBAI016.pdf"}
+                                             code={"WBAI016"} title={"Signals and Systems"}/>
+                                </SummaryDisclosure>
+                                <SummaryDisclosure title={"Semester IIb"}>
+                                    <Summary
+                                        href={"assets/summaries/2021/advanced-algorithms-and-datastructures_WBCS009.pdf"}
+                                        code={"WBCS009"} title={"Advanced Algorithms and Datastructures"}/>
+                                </SummaryDisclosure>
                             </div>
                         </Tab.Panel>
                         <Tab.Panel>
-                            <div className={"p-8 bg-slate-100 rounded-xl shadow leading-loose"}>
-                                <Disclosure>
-                                    <Disclosure.Button
-                                        className={"flex shadow px-4 py-2 text-sm font-medium bg-indigo-100 hover:bg-indigo-200 w-full rounded-lg justify-between"}>
-                                        <span>Semester Ib</span>
-                                        <ChevronDownIcon className={"w-5 h-5"}/>
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className={"w-full mt-4 px-4 py-2 bg-white shadow rounded-lg"}>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/1920/discrete-structures_INBDS-08.pdf"><samp>INBDS</samp> &mdash; Discrete
-                                            Structures</a>
-                                    </Disclosure.Panel>
-                                </Disclosure>
-                                <Disclosure>
-                                    <Disclosure.Button
-                                        className={"flex shadow mt-4 px-4 py-2 text-sm font-medium bg-indigo-100 hover:bg-indigo-200 w-full rounded-lg justify-between"}>
-                                        <span>Semester IIb</span>
-                                        <ChevronDownIcon className={"w-5 h-5"}/>
-                                    </Disclosure.Button>
-                                    <Disclosure.Panel className={"w-full mt-4 px-4 py-2 bg-white shadow rounded-lg"}>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/1920/algorithms-and-datastructures-in-C_INBADC-09.pdf"><samp>INADC-09</samp> &mdash; Algorithms
-                                            and Datastructures in C</a><br/>
-                                        <a className="underline text-slate-800 hover:text-black"
-                                           href="assets/summaries/1920/introduction-to-information-systems_INBIIS-08.pdf"><samp>INBIIS</samp> &mdash; Introduction
-                                            to Information Systems</a>
-                                    </Disclosure.Panel>
-                                </Disclosure>
+                            <div className={"p-8 pt-4 bg-slate-100 rounded-xl shadow leading-loose"}>
+                                <SummaryDisclosure title={"Semester Ib"}>
+                                    <Summary href={"assets/summaries/1920/discrete-structures_INBDS-08.pdf"}
+                                             code={"INBDS-08"} title={"Discrete Structures"}/>
+                                </SummaryDisclosure>
+                                <SummaryDisclosure title={"Semester IIb"}>
+                                    <Summary
+                                        href={"assets/summaries/1920/algorithms-and-datastructures-in-C_INBADC-09.pdf"}
+                                        code={"INADC-09"} title={"Algorithms and Datastructures in C"}/>
+                                    <Summary
+                                        href={"assets/summaries/1920/introduction-to-information-systems_INBIIS-08.pdf"}
+                                        code={"INBIIS"} title={"Introduction to Information Systems"}/>
+                                </SummaryDisclosure>
                             </div>
                         </Tab.Panel>
                     </Tab.Group>
@@ -133,11 +88,7 @@ export default function Summaries() {
     )
 };
 
-function YearTab({ title }: YearTabProps) {
-    return (
-        <Tab as={Fragment}>{({ selected }) => (
-            <button
-                className={"w-full py-2 font-medium rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60" + (selected ? " bg-indigo-500 text-white" : "")}>{title}</button>
-        )}</Tab>
-    )
-}
+
+
+
+
