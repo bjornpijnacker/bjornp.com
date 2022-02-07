@@ -1,6 +1,6 @@
 import "../global.css";
 import React, { Fragment } from 'react';
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar/navbar';
 import { Tab } from '@headlessui/react';
 
 type YearTabProps = {
@@ -12,7 +12,7 @@ export default function Summaries() {
         <>
             <Navbar active={"Summaries"}/>
             <main className={"leading-relaxed"}>
-                <div className={"container md:w-3/4 mx-auto p-4 my-4"}>
+                <div className={"container max-w-5xl mx-auto p-4 my-4"}>
                     <div className={"text-justify mx-auto space-y-4 mb-8"}>
                         <p className={"text-center text-4xl"}>Summaries</p>
                         <p>Below is a list of summaries I have written for you to enjoy. In case of questions, issues,

@@ -1,6 +1,6 @@
 import "../global.css";
 import React from 'react';
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar/navbar';
 
 export default function NotFound() {
     return (
