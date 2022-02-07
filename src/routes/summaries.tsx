@@ -36,18 +36,18 @@ export default function Summaries() {
                         <Tab.Panel>
                             <div className={"p-8 pt-4 bg-slate-100 rounded-xl shadow leading-loose"}>
                                 <SummaryDisclosure title={"Semester Ia"}>
-                                    <Summary href={"assets/summaries/2122/information-security_WBCS004.pdf"}
+                                    <Summary href={"/assets/summaries/2122/information-security_WBCS004.pdf"}
                                              code={"WBCS004"} title={"Information Security"}/>
                                     <Summary
-                                        href={"assets/summaries/2122/introduction-to-machine-learning_WBCS032.pdf"}
+                                        href={"/assets/summaries/2122/introduction-to-machine-learning_WBCS032.pdf"}
                                         code={"WBCS032"} title={"Introduction to Machine Learning"}/>
                                     <Summary
-                                        href={"assets/summaries/2122/network-centric-systems_WBCS031.pdf"}
+                                        href={"/assets/summaries/2122/network-centric-systems_WBCS031.pdf"}
                                         code={"WBCS031"} title={"Network Centric Systems"}/>
                                 </SummaryDisclosure>
                                 <SummaryDisclosure title={"Semester Ib"}>
                                     <Summary
-                                        href={"assets/summaries/2122/compiler-construction_WBCS039.pdf"}
+                                        href={"/assets/summaries/2122/compiler-construction_WBCS039.pdf"}
                                         code={"WBCS039"} title={"Compiler Construction"}/>
                                 </SummaryDisclosure>
                             </div>
@@ -55,12 +55,12 @@ export default function Summaries() {
                         <Tab.Panel>
                             <div className={"p-8 pt-4 bg-slate-100 rounded-xl shadow leading-loose"}>
                                 <SummaryDisclosure title={"Semester Ib"}>
-                                    <Summary href={"assets/summaries/2021/signals-and-systems_WBAI016.pdf"}
+                                    <Summary href={"/assets/summaries/2021/signals-and-systems_WBAI016.pdf"}
                                              code={"WBAI016"} title={"Signals and Systems"}/>
                                 </SummaryDisclosure>
                                 <SummaryDisclosure title={"Semester IIb"}>
                                     <Summary
-                                        href={"assets/summaries/2021/advanced-algorithms-and-datastructures_WBCS009.pdf"}
+                                        href={"/assets/summaries/2021/advanced-algorithms-and-datastructures_WBCS009.pdf"}
                                         code={"WBCS009"} title={"Advanced Algorithms and Datastructures"}/>
                                 </SummaryDisclosure>
                             </div>
@@ -68,15 +68,15 @@ export default function Summaries() {
                         <Tab.Panel>
                             <div className={"p-8 pt-4 bg-slate-100 rounded-xl shadow leading-loose"}>
                                 <SummaryDisclosure title={"Semester Ib"}>
-                                    <Summary href={"assets/summaries/1920/discrete-structures_INBDS-08.pdf"}
+                                    <Summary href={"/assets/summaries/1920/discrete-structures_INBDS-08.pdf"}
                                              code={"INBDS-08"} title={"Discrete Structures"}/>
                                 </SummaryDisclosure>
                                 <SummaryDisclosure title={"Semester IIb"}>
                                     <Summary
-                                        href={"assets/summaries/1920/algorithms-and-datastructures-in-C_INBADC-09.pdf"}
+                                        href={"/assets/summaries/1920/algorithms-and-datastructures-in-C_INBADC-09.pdf"}
                                         code={"INADC-09"} title={"Algorithms and Datastructures in C"}/>
                                     <Summary
-                                        href={"assets/summaries/1920/introduction-to-information-systems_INBIIS-08.pdf"}
+                                        href={"/assets/summaries/1920/introduction-to-information-systems_INBIIS-08.pdf"}
                                         code={"INBIIS"} title={"Introduction to Information Systems"}/>
                                 </SummaryDisclosure>
                             </div>
