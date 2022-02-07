@@ -22,7 +22,7 @@ export default function ContactDropdown() {
     return (
         <Popover>
             <Popover.Button ref={(ref: any) => setTargetElement(ref)}
-                            className={"px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-200"}>
+                            className={"px-3 py-2 rounded-lg text-sm font-medium hover:bg-indigo-100"}>
                 Contact me <svg xmlns="http://www.w3.org/2000/svg" className="inline h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                 <path fillRule="evenodd"

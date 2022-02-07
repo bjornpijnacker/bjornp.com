@@ -17,7 +17,7 @@ type MenuProps = {
 export default function Navbar({ active }: MenuProps) {
     return (
         <>
-            <Disclosure as={"nav"} className={"bg-slate-100 shadow"}>
+            <Disclosure as={"nav"} className={"bg-indigo-50 shadow"}>
                 {({ open }) => (
                     <>
                         <div className={"max-w-7xl mx-auto px-4"}>
