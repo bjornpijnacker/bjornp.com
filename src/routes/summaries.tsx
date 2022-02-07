@@ -1,7 +1,7 @@
 import "../global.css";
 import React, { Fragment } from 'react';
 import Navbar from '../components/navbar/navbar';
-import { Tab } from '@headlessui/react';
+import { Tab, Transition } from '@headlessui/react';
 
 type YearTabProps = {
     title: string
@@ -27,13 +27,13 @@ export default function Summaries() {
                     </div>
 
                     <Tab.Group>
-                        <Tab.List className={"w-full p-2 flex space-x-4 bg-slate-100 rounded mb-4"}>
+                        <Tab.List className={"w-full p-1 flex space-x-4 bg-slate-100 rounded-xl mb-4 shadow"}>
                             <YearTab title={"2021 \u2014 2022"}/>
                             <YearTab title={"2020 \u2014 2021"}/>
                             <YearTab title={"2019 \u2014 2020"}/>
                         </Tab.List>
                         <Tab.Panel>
-                            <div className={"p-8 bg-slate-100 rounded"}>
+                            <div className={"p-8 bg-slate-100 rounded-xl shadow leading-loose"}>
                                 <p className="text-2xl">Semester Ia</p>
                                 <ul className="list-disc list-inside">
                                     <li><a className="underline text-slate-800 hover:text-black"
@@ -55,7 +55,7 @@ export default function Summaries() {
                             </div>
                         </Tab.Panel>
                         <Tab.Panel>
-                            <div className={"p-8 bg-slate-100 rounded"}>
+                            <div className={"p-8 bg-slate-100 rounded-xl shadow leading-loose"}>
                                 <p className="text-2xl">Semester Ib</p>
                                 <ul className="list-disc list-inside">
                                     <li><a className="underline text-slate-800 hover:text-black"
@@ -72,7 +72,7 @@ export default function Summaries() {
                             </div>
                         </Tab.Panel>
                         <Tab.Panel>
-                            <div className={"p-8 bg-slate-100 rounded"}>
+                            <div className={"p-8 bg-slate-100 rounded-xl shadow leading-loose"}>
                                 <p className="text-2xl">Semester Ib</p>
                                 <ul className="list-disc list-inside">
                                     <li><a className="underline text-slate-800 hover:text-black"
@@ -92,13 +92,6 @@ export default function Summaries() {
                             </div>
                         </Tab.Panel>
                     </Tab.Group>
-
-
-                    {/*    <div className="p-4">*/}
-                    {/*        <p className="text-3xl text-center mb-4">2019 &ndash; 2020</p>*/}
-
-                    {/*    </div>*/}
-                    {/*</div>*/}
                 </div>
             </main>
         </>
@@ -108,7 +101,7 @@ export default function Summaries() {
 function YearTab({ title }: YearTabProps) {
     return (
         <Tab as={Fragment}>{({ selected }) => (
-            <button className={"w-full py-2 font-medium rounded focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60" + (selected ? " bg-blue-500 text-white" : "")}>{title}</button>
+            <button className={"w-full py-2 font-medium rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60" + (selected ? " bg-indigo-500 text-white" : "")}>{title}</button>
         )}</Tab>
     )
 }

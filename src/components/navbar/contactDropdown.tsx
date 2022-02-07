@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import { usePopper } from "react-popper";
-import { Popover } from "@headlessui/react";
+import { Popover, Portal, Transition } from "@headlessui/react";
+import { SocialIcon } from 'react-social-icons';
 
 export default function ContactDropdown() {
-    let [ referenceElement, setReferenceElement ] = useState()
-    let [ popperElement, setPopperElement ] = useState()
-    let { styles, attributes } = usePopper(referenceElement, popperElement)
+    const popperElRef = React.useRef(null);
+    const [ targetElement, setTargetElement ] = useState()
+    const [ popperElement, setPopperElement ] = useState()
+    const { styles, attributes } = usePopper(targetElement, popperElement, {
+        placement: "bottom",
+        modifiers: [
+            {
+                name: "offset",
+                options: {
+                    offset: [0,8]
+                }
+            }
+        ]
+    })
 
     return (
         <Popover>
-            <Popover.Button ref={(ref: any) => setReferenceElement(ref)}
-                            className={"px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-200"}>
+            <Popover.Button ref={(ref: any) => setTargetElement(ref)}
+                            className={"px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-200"}>
                 Contact me <svg xmlns="http://www.w3.org/2000/svg" className="inline h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
                 <path fillRule="evenodd"
@@ -18,32 +30,48 @@ export default function ContactDropdown() {
                       clipRule="evenodd"/>
             </svg>
             </Popover.Button>
-            <Popover.Panel
-                ref={(ref: any) => setPopperElement(ref)}
-                style={styles.popper}
-                {...attributes.popper}
-            >
-                <div className={"bg-white border border-slate-300 shadow rounded-md divide-y"}>
-                    {/* eslint-disable-next-line no-script-url */}
-                    <a href={"javascript:window.location.href=atob('bWFpbHRvOmJqb3JuLnBpam5hY2tlckBnbWFpbC5jb20=')"}
-                       target={"_blank"}
-                       className={"block px-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
-                        Email
-                    </a>
-                    <a href={"https://github.com/bjornpijnacker"} target={"_blank"}
-                       className={"block px-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
-                        GitHub
-                    </a>
-                    <a href={"https://twitter.com/BPijnacker"} target={"_blank"}
-                       className={"block px-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
-                        Twitter
-                    </a>
-                    <a href={"https://www.instagram.com/bjornpijnacker/"} target={"_blank"}
-                       className={"block px-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
-                        Instagram
-                    </a>
+            <Portal>
+                <div ref={popperElRef}
+                     style={styles.popper}
+                     {...attributes.popper}
+                >
+                    <Transition
+                        enter="transition duration-100 ease-out"
+                        enterFrom="transform scale-95 opacity-0"
+                        enterTo="transform scale-100 opacity-100"
+                        leave="transition duration-75 ease-out"
+                        leaveFrom="transform scale-100 opacity-100"
+                        leaveTo="transform scale-95 opacity-0"
+                        // @ts-ignore
+                        beforeEnter={() => setPopperElement(popperElRef.current)}
+                        // @ts-ignore
+                        afterLeave={() => setPopperElement(null)}
+                    >
+                        <Popover.Panel>
+                            <div className={"bg-white border border-slate-300 shadow rounded-xl divide-y"}>
+                                {/* eslint-disable-next-line no-script-url */}
+                                <a href={"javascript:window.location.href=atob('bWFpbHRvOmJqb3JuLnBpam5hY2tlckBnbWFpbC5jb20=')"}
+                                   target={"_blank"}
+                                   className={"block pl-7 pr-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
+                                    <SocialIcon network={"email"} className={"w-8 h-8 mr-3"}/> Email
+                                </a>
+                                <a href={"https://github.com/bjornpijnacker"} target={"_blank"}
+                                   className={"block pl-7 pr-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
+                                    <SocialIcon network={"github"} className={"w-8 h-8 mr-3"}/> GitHub
+                                </a>
+                                <a href={"https://twitter.com/BPijnacker"} target={"_blank"}
+                                   className={"block pl-7 pr-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
+                                    <SocialIcon network={"twitter"} className={"w-8 h-8 mr-3"}/> Twitter
+                                </a>
+                                <a href={"https://www.instagram.com/bjornpijnacker/"} target={"_blank"}
+                                   className={"block pl-7 pr-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
+                                    <SocialIcon network={"instagram"} className={"w-8 h-8 mr-3"}/> Instagram
+                                </a>
+                            </div>
+                        </Popover.Panel>
+                    </Transition>
                 </div>
-            </Popover.Panel>
+            </Portal>
         </Popover>
     )
 }

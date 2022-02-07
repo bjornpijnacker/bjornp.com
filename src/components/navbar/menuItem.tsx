@@ -10,7 +10,7 @@ interface MenuItemProps {
 export default function MenuItem({ name, href, active }: MenuItemProps) {
     return (
         <Link to={href}
-              className={"px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-200" + (active ? " hover:bg-indigo-500 bg-indigo-500 text-white" : "")}>
+              className={"px-3 py-2 rounded-lg text-sm font-medium" + (active ? " hover:bg-indigo-500 bg-indigo-500 text-white" : " hover:bg-slate-200")}>
             {name}</Link>
     );
 }
