@@ -32,12 +32,7 @@ export default function Navbar({ active }: MenuProps) {
                                     {/*  navbar buttons  */}
                                     <div className={"hidden sm:block sm:ml-6"}>
                                         <div className={"flex space-x-4"}>
-                                            {
-                                                navigation.map((item) => (
-                                                    <MenuItem name={item.name} href={item.href}
-                                                              active={item.name === active}/>
-                                                ))
-                                            }
+                                            <MenuContent active={active}/>
                                         </div>
                                     </div>
                                 </div>
@@ -51,12 +46,8 @@ export default function Navbar({ active }: MenuProps) {
                         </div>
 
                         <Disclosure.Panel className={"sm:hidden"}>
-                            <div className={"px-4 pt-2 pb-4 space-y-1"}>
-                                {
-                                    navigation.map((item) => (
-                                        <MenuItem name={item.name} href={item.href} active={item.name === active}/>
-                                    ))
-                                }
+                            <div className={"px-4 pt-2 pb-4 space-x-1"}>
+                                <MenuContent active={active}/>
                             </div>
                         </Disclosure.Panel>
                     </>
@@ -64,4 +55,17 @@ export default function Navbar({ active }: MenuProps) {
             </Disclosure>
         </>
     );
+}
+
+function MenuContent({ active }: MenuProps) {
+    return (
+        <>
+            {
+                navigation.map((item) => (
+                    <MenuItem name={item.name} href={item.href}
+                              active={item.name === active}/>
+                ))
+            }
+        </>
+    )
 }
