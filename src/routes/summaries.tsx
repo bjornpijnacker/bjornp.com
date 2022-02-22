@@ -82,6 +82,12 @@ export default function Summaries() {
                             </div>
                         </Tab.Panel>
                     </Tab.Group>
+                        <div className={"text-center mx-auto space-y-4 mt-8"}>
+                            <p className={"text-slate-600"}>Did these summaries help you? Send me <a
+                                    className="underline text-slate-800 hover:text-black" rel="noreferrer" target="_blank"
+                                    href="https://paypal.me/BPijnacker?country.x=NL&locale.x=nl_NL">a thank you</a>!
+                            </p>
+                        </div>
                 </div>
             </main>
         </>
