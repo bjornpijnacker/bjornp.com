@@ -51,7 +51,6 @@ export default function ContactDropdown() {
                             <div className={"bg-white border border-slate-300 shadow rounded-xl divide-y"}>
                                 {/* eslint-disable-next-line no-script-url */}
                                 <a href={"javascript:window.location.href=atob('bWFpbHRvOmJqb3JuLnBpam5hY2tlckBnbWFpbC5jb20=')"}
-                                   target={"_blank"}
                                    className={"block pl-7 pr-8 py-4 text-sm text-gray-700 hover:bg-slate-100"}>
                                     <SocialIcon network={"email"} className={"w-8 h-8 mr-3"}/> Email
                                 </a>
