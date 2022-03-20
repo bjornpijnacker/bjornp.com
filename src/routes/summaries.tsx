@@ -1,8 +1,7 @@
 import "../global.css";
-import React, { Fragment } from 'react';
+import React from 'react';
 import Navbar from '../components/navbar/navbar';
-import { Disclosure, Tab } from '@headlessui/react';
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { Tab } from '@headlessui/react';
 
 import YearTab from "../components/summaries/yeartab";
 import Summary from "../components/summaries/summary";
@@ -50,6 +49,10 @@ export default function Summaries() {
                                         href={"/assets/summaries/2122/compiler-construction_WBCS039.pdf"}
                                         code={"WBCS039"} title={"Compiler Construction"}/>
                                 </SummaryDisclosure>
+                                <div className={"mt-4 w-full text-center"}>
+                                    <p className={"italic text-slate-800"}>Computer Graphics (WBCS019) and Operating
+                                        Systems (WBCS023) will be available here soon!</p>
+                                </div>
                             </div>
                         </Tab.Panel>
                         <Tab.Panel>
