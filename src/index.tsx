@@ -7,6 +7,7 @@ import Summaries from "./routes/summaries";
 import Home from "./routes/home";
 import NotFound from "./routes/notfound";
 import Passwd from "./routes/passwd";
+import ConfluenceTree from "./routes/confluence-tree";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -14,6 +15,7 @@ ReactDOM.render(
             <Route path={"/"} element={<Home/>}/>
             <Route path={"/summaries"} element={<Summaries/>}/>
             <Route path={'/passwd'} element={<Passwd/>}/>
+            <Route path={'/confluence-tree'} element={<ConfluenceTree/>}/>
             <Route path={"*"} element={<NotFound/>}/>
         </Routes>
     </BrowserRouter>,

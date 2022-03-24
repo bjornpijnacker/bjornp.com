@@ -23,7 +23,8 @@
     "react-popper": "^2.2.5",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
-    "react-social-icons": "^5.10.0"
+    "react-social-icons": "^5.10.0",
+    "jssoup": "^0.0.15"
   },
   "scripts": {
     "start": "react-scripts start",

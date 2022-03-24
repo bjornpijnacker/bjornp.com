@@ -12,7 +12,7 @@ const navigation = [
 ];
 
 type MenuProps = {
-    active: string;
+    active?: string;
 };
 
 export default function Navbar({ active }: MenuProps) {
@@ -64,7 +64,8 @@ function MenuContent({ active }: MenuProps) {
             {
                 navigation.map((item) => (
                     <MenuItem name={item.name} href={item.href}
-                              active={item.name === active}/>
+                    active={item.name === active}
+                    key={item.name}/>
                 ))
             }
         </>
