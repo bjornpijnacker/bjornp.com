@@ -129,6 +129,10 @@ function Explanation() {
                                 <hr className={"mt-4 mb-4"}/>
                                 <p className={"font-bold tracking-wide block uppercase text-xs mt-4"}>Stap 4:</p>
                                 Rechtsklik op dit element en selecteer "Copy, Copy Element". Plak dit hieronder.
+
+                                <hr className={"mt-4 mb-4"}/>
+                                <p className={"font-bold tracking-wide block uppercase text-xs mt-4"}>Stap 5:</p>
+                                Klik op "Submit" en kopieer de data die onderin het scherm in beeld komt. Plak dit in Excel (of Google Sheets) d.m.v. <kbd className={"px-2 py-1 rounded-lg border border-slate-300 shadow mx-1"}>Ctrl</kbd>+<kbd className={"px-2 py-1 rounded-lg border border-slate-300 shadow mx-1"}>Shift</kbd>+<kbd className={"px-2 py-1 rounded-lg border border-slate-300 shadow mx-1"}>V</kbd> zodat Excel automatisch subpagina's in nieuwe kolommen zet.
                             </div>
                         </Disclosure.Panel>
                     </Transition>
