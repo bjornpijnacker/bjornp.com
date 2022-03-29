@@ -49,8 +49,11 @@ export default function Summaries() {
                                         href={"/assets/summaries/2122/compiler-construction_WBCS039.pdf"}
                                         code={"WBCS039"} title={"Compiler Construction"}/>
                                 </SummaryDisclosure>
+                                <SummaryDisclosure title={"Semester IIa"}>
+                                    <Summary href={"/assets/summaries/2122/computer-graphics_WBCS019.pdf"} code={"WBCS019"} title={"Computer Graphics"}/>
+                                </SummaryDisclosure>
                                 <div className={"mt-4 w-full text-center"}>
-                                    <p className={"italic text-slate-800"}>Computer Graphics (WBCS019) and Operating
+                                    <p className={"italic text-slate-800"}>Operating
                                         Systems (WBCS023) will be available here soon!</p>
                                 </div>
                             </div>
