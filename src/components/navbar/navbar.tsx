@@ -8,7 +8,7 @@ import ContactDropdown from "./contactDropdown";
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Summaries', href: '/summaries' },
-    { name: 'Password Generator', href: '/passwd' }
+    // { name: 'Password Generator', href: '/passwd' }
 ];
 
 type MenuProps = {
